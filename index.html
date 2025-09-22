@@ -3,95 +3,114 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Choi Byunggoo · Contact</title>
-  <meta name="description" content="셰프 명함 · 즉시 연락 · 연락처 저장 (이메일/전화/인스타그램)">
-  <meta property="og:title" content="Choi Byunggoo · Contact">
-  <meta property="og:description" content="이메일/전화/인스타그램 · 연락처 저장(vCard)">
+  <title>Choi Byunggoo · Links</title>
+  <meta name="description" content="Choi Byunggoo · Chef · Private Dining · 연락처/이메일/전화/인스타그램">
+  <meta property="og:title" content="Choi Byunggoo · Links">
+  <meta property="og:description" content="연락처 저장, 이메일, 전화, 인스타그램">
   <meta property="og:type" content="profile">
   <meta property="profile:first_name" content="Byunggoo">
   <meta property="profile:last_name" content="Choi">
   <style>
     :root {
-      --bg: #F5F4EF;
-      --fg: #151518;
-      --muted: #6B6B6F;
-      --border: #E6E6E8;
+      --bg: #0f1115;
+      --panel: #14171d;
+      --fg: #F5F4EF;
+      --muted: #BDBEC2;
       --accent: #B1682B;
+      --ring: rgba(177,104,43,.45);
+      --border: #22262e;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(177,104,43,.20), transparent 60%),
+        var(--bg);
       color: var(--fg);
-      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Apple SD Gothic Neo, Noto Sans KR, Helvetica, Arial, sans-serif;
     }
     .wrap {
-      max-width: 560px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 32px 20px 48px;
+      padding: 32px 18px 64px;
     }
-    .card {
-      background: #fff;
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
+    .avatar {
+      width: 108px; height: 108px;
+      border-radius: 50%;
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      background: linear-gradient(180deg, #1e2128, #12151a);
+      box-shadow: 0 0 0 8px rgba(177,104,43,.08), 0 8px 36px rgba(0,0,0,.4);
+      display: grid; place-items: center;
+      font-weight: 800; font-size: 28px; letter-spacing: .5px; color: var(--fg);
     }
-    h1 { font-size: 22px; margin: 4px 0 2px; letter-spacing: -0.2px; }
-    .role { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+    h1 { font-size: 26px; margin: 0; }
+    .sub { color: var(--muted); font-size: 14px; }
+    .links {
+      display: grid; gap: 12px;
+      margin-top: 14px;
     }
     a.btn {
-      display: block;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
       text-decoration: none;
-      padding: 14px 16px;
-      border-radius: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: var(--panel);
       color: var(--fg);
-      font-weight: 600;
-      text-align: center;
+      font-weight: 700;
+      transition: transform .04s ease, box-shadow .2s ease, border-color .2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,.30);
     }
-    a.btn.primary {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-    .note { margin-top: 12px; color: var(--muted); font-size: 12px; }
-    .footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 18px; }
-    .avatar {
-      width: 56px; height: 56px; border-radius: 14px;
-      display: inline-flex; align-items:center; justify-content:center;
-      background: #fff; border: 1px solid var(--border); margin-right: 12px;
-      font-weight: 800;
-    }
-    .header { display:flex; align-items:center; margin-bottom: 12px; }
+    a.btn:hover { transform: translateY(-1px); border-color: var(--ring); box-shadow: 0 10px 28px rgba(0,0,0,.40); }
+    a.primary { background: linear-gradient(180deg, #c07738, #9b5d2b); border-color: #c07738; }
+    .note { color: var(--muted); font-size: 12px; margin-top: 8px; text-align:center; }
+    .footer { text-align:center; color: var(--muted); font-size: 12px; margin-top: 22px; }
+    .chip { font-size: 11px; border:1px solid var(--border); padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.03); }
+    .chips { display:flex; gap: 8px; justify-content:center; margin-top: 4px; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, #292e36, transparent); margin: 16px 0 10px; }
+    .emoji { filter: grayscale(0.2) contrast(1.2); }
+    .kr { opacity:.8; font-weight:600; }
+    .sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="header">
-        <div class="avatar">CB</div>
-        <div>
-          <h1>Choi Byunggoo <small style="font-weight:500;color:var(--muted)">최병구</small></h1>
-          <div class="role">Chef · Private Dining</div>
-        </div>
+  <main class="wrap">
+    <section class="profile">
+      <div class="avatar" aria-hidden="true">CB</div>
+      <h1>Choi Byunggoo <span class="kr">최병구</span></h1>
+      <div class="sub">Chef · Private Dining</div>
+      <div class="chips">
+        <div class="chip">Seasonal · Tasting</div>
+        <div class="chip">Private Dining</div>
       </div>
+    </section>
 
-      <div class="grid">
-        <a class="btn primary" href="./choi-byoung-goo.vcf" download>연락처 저장 (vCard)</a>
-        <a class="btn" href="mailto:byunggoochoe@gmail.com">이메일 보내기</a>
-        <a class="btn" href="tel:+8210-8577-9333">전화 걸기</a>
-        <a class="btn" href="https://www.instagram.com/gnalog_/" target="_blank" rel="noopener">인스타그램 열기</a>
-      </div>
+    <section class="links">
+      <a class="btn primary" href="./choi-byoung-goo.vcf" download>
+        <span class="emoji">📇</span> 연락처 저장 (vCard)
+      </a>
+      <a class="btn" href="mailto:byunggoochoe@gmail.com">
+        <span class="emoji">✉️</span> 이메일 보내기
+      </a>
+      <a class="btn" href="tel:+8210-8577-9333">
+        <span class="emoji">📞</span> 전화 걸기
+      </a>
+      <a class="btn" href="https://www.instagram.com/gnalog_/" target="_blank" rel="noopener">
+        <span class="emoji">📷</span> Instagram @gnalog_
+      </a>
+    </section>
 
-      <div class="note">iOS/Android에서 “연락처 저장 (vCard)”를 누르면 주소록에 바로 추가됩니다.</div>
-    </div>
+    <div class="note">링크 클릭이 안 될 경우 브라우저 주소창에서 새로고침(↻) 해주세요.</div>
+    <div class="divider"></div>
     <div class="footer">© 2025 Choi Byunggoo</div>
-  </div>
+  </main>
 </body>
 </html>
